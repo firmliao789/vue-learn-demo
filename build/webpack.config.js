@@ -32,5 +32,9 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
-    ]
+    ],
+    resolve: {
+        extensions: ['.js'],
+        alias: {}
+    }
 }

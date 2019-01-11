@@ -9,6 +9,11 @@ window.onload = function () {
             add: function () {
                 this.number++;
             }
+        },
+        computed: {
+            getNumber: function () {
+                return this.number + this.input;
+            }
         }
     })
     console.log(vue);
