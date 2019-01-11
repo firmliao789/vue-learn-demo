@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-dome</title>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+            var vue = new myVue({
+                el: "#app",
+                data: {
+                    number: 1,
+                    input: 2
+                },
+                methods: {
+                    add: function () {
+                        this.number++;
+                    }
+                }
+            })
+            console.log(vue);
+        }
+
+    </script>
+</head>
+<body>
+<div id="app">
+    <form>
+        <input type="text" placeholder="请输入" v-model="input">
+        <button type="button" v-click="add">增加</button>
+    </form>
+    <div v-bind="number"></div>
+</div>
+</body>
+</html>
