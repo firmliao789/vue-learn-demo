@@ -1,4 +1,4 @@
-function myVue(options) {
+let myVue = function (options) {
     this.$el = document.querySelector(options.el);
     this.$data = options.data;
     this.$methods = options.methods;
@@ -96,3 +96,4 @@ function Watcher(el, vm, attr, exp) {
 Watcher.prototype.update = function () {
     this.el[this.attr] = this.vm.$data[this.exp];
 }
+export default myVue;
