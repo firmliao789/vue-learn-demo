@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node ./build/dev.server.js",
-    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress",
+    "build": "rm -rf ./dist && webpack --config ./build/webpack.pro.config.js --progress",
+    "build:dev": "rm -rf ./dist && webpack --config ./build/webpack.dev.config.js --progress",
     "v": "webpack -v"
   },
   "repository": {
@@ -42,10 +43,12 @@
     "sass-loader": "^7.1.0",
     "scss-loader": "0.0.1",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-middleware": "^3.5.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.2.1"
   }
 }

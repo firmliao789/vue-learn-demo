@@ -9,10 +9,9 @@ const resolve = (file) => {
     return path.join(__dirname, '..', file);
 }
 module.exports = {
-    mode: "development",
     entry: {
-        "my-vue": ['webpack-hot-middleware/client?noInfo=true&reload=true', resolve('./src/index.js')],
-        "index": ['webpack-hot-middleware/client?noInfo=true&reload=true', resolve('./test/index.js')]
+        "my-vue": resolve('./src/index.js'),
+        "index": resolve('./test/index.js')
     },
     output: {
         path: resolve('./dist'),
@@ -94,8 +93,6 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './index.html'
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
@@ -104,7 +101,7 @@ module.exports = {
         }),
         new PurifyCSSPlugin({
             //这里配置了一个paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了。
-            paths: glob.sync(path.join(__dirname, '..','index.html')),
+            paths: glob.sync(path.join(__dirname, '..', 'index.html')),
         })
     ],
     resolve: {
